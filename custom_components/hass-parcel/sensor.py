@@ -43,7 +43,7 @@ class ParcelApiClient:
         }
         
         async with self.session.get(
-            f"{PARCEL_API_URL}/deliveries", headers=headers
+            f"{PARCEL_API_URL}/deliveries/", headers=headers
         ) as resp:
             if resp.status != 200:
                 raise Exception(f"Error fetching shipments: {resp.status}")
