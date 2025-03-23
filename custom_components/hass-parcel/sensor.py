@@ -129,14 +129,14 @@ class ParcelDeliverySensor(CoordinatorEntity, SensorEntity):
         """Update attributes based on current data."""
         shipment = self.coordinator.data[self.idx] if self.idx < len(self.coordinator.data) else {}
         
-        self._attr_native_value = shipment.get("status", "unknown")
+        self._attr_native_value = shipment.get("status_code", "unknown")
         
         # Prepare attributes for the card
         self._attr_extra_state_attributes = {
             "name": shipment.get("name", "Unknown"),
             "carrier": shipment.get("carrier", {}).get("name", "Unknown"),
             "tracking_number": shipment.get("tracking_number", "Unknown"),
-            "status": shipment.get("status", "Unknown"),
+            "status": shipment.get("status_code", "Unknown"),
             "last_update": shipment.get("last_update", "Unknown"),
             "estimated_delivery": shipment.get("estimated_delivery", "Unknown"),
             "from_location": shipment.get("from_location", "Unknown"),
@@ -145,7 +145,7 @@ class ParcelDeliverySensor(CoordinatorEntity, SensorEntity):
         }
         
         # Custom status color for Lovelace card
-        status = shipment.get("status", "").lower()
+        status = shipment.get("status_code", "").lower()
         if "delivered" in status:
             self._attr_extra_state_attributes["status_color"] = "green"
         elif "transit" in status:
