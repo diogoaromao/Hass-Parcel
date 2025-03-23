@@ -2,6 +2,7 @@
   "domain": "parcel",
   "name": "Hass Parcel Delivery Tracker",
   "documentation": "https://github.com/yourusername/hass-parcel",
+  "issue_tracker": "https://github.com/yourusername/hass-parcel/issues",
   "dependencies": [],
   "codeowners": ["@diogoaromao"],
   "requirements": [],
