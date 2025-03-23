@@ -38,7 +38,7 @@ class ParcelApiClient:
     async def get_shipments(self):
         """Get shipments from Parcel API."""
         headers = {
-            "Authorization": f"Bearer {self.api_key}",
+            "api-key": f"Bearer {self.api_key}",
             "Content-Type": "application/json",
         }
         
