@@ -49,7 +49,7 @@ class ParcelApiClient:
                 raise Exception(f"Error fetching shipments: {resp.status}")
             
             data = await resp.json()
-            return data.get("shipments", [])
+            return data.get("deliveries", [])
 
 class ParcelDataUpdateCoordinator(DataUpdateCoordinator):
     """Class to manage fetching Parcel data."""
