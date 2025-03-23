@@ -11,7 +11,7 @@ _LOGGER = logging.getLogger(__name__)
 
 DOMAIN = "parcel"
 SCAN_INTERVAL = timedelta(minutes=15)
-PARCEL_API_URL = "https://api.parcel.app/v1"
+PARCEL_API_URL = "https://api.parcel.app/external/"
 
 async def async_setup(hass: HomeAssistant, config: dict) -> bool:
     """Set up the Parcel integration."""
