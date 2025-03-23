@@ -1,0 +1,11 @@
+{
+  "domain": "parcel",
+  "name": "Hass Parcel Delivery Tracker",
+  "documentation": "https://github.com/yourusername/hass-parcel",
+  "dependencies": [],
+  "codeowners": diogoaromao,
+  "requirements": [],
+  "config_flow": true,
+  "version": "0.1.0",
+  "iot_class": "cloud_polling"
+}
